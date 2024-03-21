@@ -1,4 +1,6 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+module.exports = {
+  transpileDependencies: [
+    'vue-qrcode-reader', // Add any dependencies you want to transpile here
+  ],
+  lintOnSave: false,
+};
