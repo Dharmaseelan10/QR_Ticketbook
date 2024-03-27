@@ -3,7 +3,7 @@
 The QR Concert Booking System is a web application designed to streamline the process of booking tickets for concerts and events using QR code technology. This repository contains the source code for both the frontend and backend components of the system.
 
 
- ![alt text](image-1.png)
+ ![alt text](Documents/image.png)
 
 ## Features
 
