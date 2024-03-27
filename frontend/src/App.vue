@@ -34,4 +34,10 @@ body {
   min-width: 99vw; /* Set minimum width to full viewport width */
   overflow: auto; /* Allow scrollbars */
 }
+
+/* Setting font-family for the entire application */
+html, body, #app {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  /* San Francisco is used as a system font in macOS and iOS. The fallback fonts ensure compatibility across different platforms. */
+}
 </style>

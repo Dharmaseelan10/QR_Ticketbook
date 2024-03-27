@@ -81,8 +81,7 @@ body {
   margin-bottom: 3px;
   margin-top: 5px;
   color: #ffffff; /* Set text color */
-  text-shadow: 0 0 5px #f403dc74, /* Add shadow effect */
-               0 0 25px #f403dc74;
+  text-shadow:  0 0 5px #000000;
 }
 
 .info {
@@ -92,8 +91,7 @@ body {
   margin-bottom: 0px;
   margin-top: 0px;
   color: #ffffff; /* Set text color */
-  text-shadow: 0 0 5px #f403dc74, /* Add shadow effect */
-               0 0 25px #f403dc74;
+  text-shadow:  0 0 5px #000000;
 }
 
 .concert-cards {
@@ -122,8 +120,8 @@ body {
   transform: scale(1.1);
   background: #ffffff;
     color: #ffffff;
-    box-shadow: 0 0 5px #ffffff,
-                0 0 25px #ffffff;
+    box-shadow: 0 0 5px #ff00fb,
+                0 0 25px #d400ff;
 }
 
 .concert-image {

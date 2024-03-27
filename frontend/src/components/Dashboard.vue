@@ -2,7 +2,7 @@
   <div class="homepage">
     <div class="welcome-container">
       <!-- <img src="https://virtualbarcodereader.orpalis.com/img/content/Visual_header_home.gif" alt="Barcode Scanner GIF" class="banner-image"> -->
-      <h1 class="header">Welcome to Concert Ticket Booking</h1>
+      <h1 class="header">Welcome to Bookyay-demo</h1>
       
       <!-- Carousel or scrolling posters section -->
       <div class="posters-container">
@@ -78,11 +78,11 @@ export default {
   background-image: url('https://static.vecteezy.com/system/resources/previews/022/778/224/non_2x/stage-shows-empty-dark-blue-purple-pink-background-illustration-ai-generative-free-photo.jpg'); 
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Set height to full viewport height */
+  margin-top: 100px;
 }
 
 .banner-image {
-  width: 95%; /* Reduced image size */
+  width: 100%; /* Reduced image size */
   max-width: 100px;
   margin-bottom: 10px;
 }
@@ -99,8 +99,8 @@ export default {
   color: #ffffff;
   background: none; /* Remove the background color */
   color: #ffffff; /* Set text color */
-  text-shadow: 0 0 5px #f403dc74, /* Add shadow effect */
-               0 0 25px #f403dc74;
+  text-shadow: 0 0 5px #000000;
+
 }
 
 .sub-header {
@@ -110,6 +110,7 @@ export default {
   color: #ffffff;
   background: none; /* Remove the background color */
   color: #ffffff; /* Set text color */
+  text-shadow: 0 0 5px #000000;
 }
 
 .description {
@@ -117,7 +118,7 @@ export default {
   margin-bottom: 30px;
   color: #ffffff;
   background: none; /* Remove the background color */
-  color: #ffffff; /* Set text color */
+  text-shadow: 0 0 5px #000000;
 }
 
 

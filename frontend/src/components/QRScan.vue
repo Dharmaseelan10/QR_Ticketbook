@@ -49,8 +49,7 @@ export default {
   color: rgb(255, 255, 255);
   font-family: 'Arial Black', sans-serif;
   color: #ffffff; /* Set text color */
-  text-shadow: 0 0 5px #f403dc74, /* Add shadow effect */
-               0 0 25px #f403dc74;
+  text-shadow:  0 0 5px #000000;
 }
 
 .info {

@@ -88,7 +88,6 @@ export default {
 
 .login {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -97,16 +96,14 @@ export default {
   background-image: url('https://www.wallpapertip.com/wmimgs/43-432643_concert-backgrounds.jpg'); 
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Set height to full viewport height */
-
 }
 
 .login-container {
   width: 320px; /* Set the width */
-  height: 300px; /* Set the height */
+  height: 350px; /* Set the height */
   max-width: 450px;
   margin: 200px auto; /* Adjust margin for centering on the page and creating space from the navbar */
-  padding: 20px;
+  padding: 25px;
   /* background-image: url('https://media.istockphoto.com/id/967486898/vector/studio-black-mockup.jpg?s=612x612&w=0&k=20&c=YN9LpbeGu-Kb1uTchJE6EKUqaSDRsEH7vqSkcVwVTOg='); */
   background-color: #000000ce;
   border-radius: 10px;
@@ -118,6 +115,7 @@ h2 {
   text-align: center;
   margin-bottom: 20px; /* Add margin-bottom for spacing from the form */
   color: #ffffff; /* Set text color to contrast with dark background */
+  text-shadow:  0 0 5px #000000;
 }
 
 .login-form {
@@ -149,7 +147,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-top: 7px;
 }
 
 button:hover {

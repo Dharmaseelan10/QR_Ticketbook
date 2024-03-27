@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
     <div class="logo" @click="navigate('/')">
-      <img src="https://static.vecteezy.com/system/resources/thumbnails/022/119/121/small/ticket-icon-line-raffle-ticket-symbol-trendy-flat-outline-ui-sign-design-thin-linear-graphic-pictogram-for-web-site-mobile-application-logo-illustration-eps10-free-vector.jpg" alt="Site Logo">
-      <span class="app-name">QR Concert Booking System</span>
+      <img src="data:image/png;base64,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" alt="Site Logo">
+      <span class="app-name">Bookyay-demo</span>
     </div>
     <div class="nav-links">
       <!-- Show Concerts dropdown menu -->
@@ -113,6 +113,8 @@ export default {
 .app-name {
   font-size: 25px;
   color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px #000000;
 }
 .app-name:hover{
   color: rgb(255, 255, 255);
@@ -134,6 +136,7 @@ export default {
   cursor: pointer;
   transition: color 0.3s ease;
   text-decoration: none; /* Remove underline */
+  font-weight: bold;
 }
 
 .nav-button:hover {
