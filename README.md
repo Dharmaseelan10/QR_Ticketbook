@@ -15,7 +15,7 @@ The QR Concert Booking System is a web application designed to streamline the pr
 - Cancel ticket bookings
 - Scan QR code tickets for event entry
 - Upload QR code images for ticket validation
-- Prerequisites
+
 
 ## Before running the QR Concert Booking System on your local machine, ensure you have the following prerequisites installed:
 
