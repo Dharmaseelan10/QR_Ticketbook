@@ -171,23 +171,30 @@ router.post('/book-ticket', isAuthenticated, (req, res) => {
          // Generate a unique filename for the QR code
          const qrFileName = `qr_code_${concertDetails.concertName}_${bookingId}.png`;
          console.log(qrFileName);
-        const qrFilePath1 = `C:\\xampp\\htdocs\\php-vue\\qr_code\\${qrFileName}`;
-        QRCode.toFile(qrFilePath1, qrData, (err) => {
-          if (err) {
-            console.error('Error generating QR code:', err);
-            return res.status(500).json({ error: 'Failed to generate QR code' });
-          }
-          
-          const qrFilePath2 = `C:\\Users\\Dharmaseelan\\Downloads\\${qrFileName}`;
-          QRCode.toFile(qrFilePath2, qrData, (err) => {
-            if (err) {
-              console.error('Error saving QR code to the second path:', err);
-            } else {
-              console.log('QR code saved to both paths');
+        
+          const os = require('os');
+
+        // Get the path to the user's downloads directory
+          const userDownloadsDirectory = path.join(os.homedir(), 'Downloads');
+          const qrFilePath1 = path.join(userDownloadsDirectory, qrFileName);
+
+          QRCode.toFile(qrFilePath1, qrData, (err) => {
+           if (err) {
+            console.error('Error saving QR code to the first path:', err);
+              } else {
+            console.log('QR code saved to user\'s downloads directory');
             }
           });
+
+          const baseUrl = `dist/qr_code/`;
+          const qrFilePath2 = `${baseUrl}${qrFileName}`;
+          QRCode.toFile(qrFilePath2, qrData, (err) => {
+            if (err) {
+              console.error('Error generating QR code:', err);
+              return res.status(500).json({ error: 'Failed to generate QR code' });
+            }
           
-          const qrCodePath = `http://localhost/php-vue/qr_code/${qrFileName}`;
+          const qrCodePath = `http://localhost:3000/qr_code/${qrFileName}`;
           const updateBookingQuery = 'UPDATE bookings SET qrCodeUrl = ? WHERE id = ?';
           pool.query(updateBookingQuery, [qrCodePath, bookingId], (err) => {
             if (err) {
