@@ -53,21 +53,28 @@ export default {
   methods: {
     // Method to initialize camera feed
     async initCamera() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-        this.$refs.video.srcObject = stream;
-        await new Promise((resolve) => {
-          this.$refs.video.onloadedmetadata = () => {
-            resolve();
-          };
-        });
-        this.$refs.video.play();
-        this.$refs.video.onloadedmetadata = null; // Remove the event listener to prevent multiple calls
-        this.scanQRCode();
-      } catch (error) {
-        console.error('Failed to initialize camera:', error);
-      }
-    },
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    if (this.$refs.video) {
+      this.$refs.video.srcObject = stream;
+      await new Promise((resolve) => {
+        this.$refs.video.onloadedmetadata = () => {
+          resolve();
+        };
+      });
+      this.$refs.video.play();
+      this.$refs.video.onloadedmetadata = null; // Remove the event listener to prevent multiple calls
+      this.showCamera = true; // Show the camera feed
+      this.scanQRCode();
+    } else {
+      console.error('Video element not found.');
+    }
+  } catch (error) {
+    console.error('Failed to initialize camera:', error);
+    // Handle the error here, e.g., show a message to the user
+  }
+},
+
 
     // Method to restart camera
     restartCamera() {
