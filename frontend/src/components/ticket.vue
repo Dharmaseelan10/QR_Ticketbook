@@ -156,4 +156,50 @@ body {
                 0 0 25px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+
+
+@media (max-width: 768px) {
+
+  .title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff; /* Set title color to contrast with white */
+  font-family: 'Arial Black', sans-serif;
+  margin-bottom: 3px;
+  margin-top: -20px;
+  color: #ffffff; /* Set text color */
+  text-shadow:  0 0 5px #000000;
+}
+
+  .info {
+  font-size: 35px;
+  color: #ffffff; /* Set info color to contrast with white */
+  font-family: Arial, sans-serif;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+  color: #ffffff; /* Set text color */
+  text-shadow:  0 0 5px #000000;
+}
+  
+  .concert-cards {
+    flex-direction: column; /* Arrange cards from top to bottom */
+    align-items: center; /* Center cards horizontally */
+    gap: 15px; /* Reduce gap between cards */
+  }
+
+  .concert-card {
+    width: 200px; /* Decrease card width */
+    height: auto; /* Allow card height to adjust based on content */
+  }
+
+  .concert-name {
+    font-size: 16px; /* Decrease concert name font size */
+  }
+
+  .concert-button {
+    padding: 8px 16px; /* Decrease button padding */
+    font-size: 14px; /* Decrease button font size */
+  }
+}
 </style>

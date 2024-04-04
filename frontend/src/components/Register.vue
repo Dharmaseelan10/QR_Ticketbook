@@ -121,14 +121,12 @@ export default {
 
 .registration-container {
   max-width: 400px;
-  width: 400px; /* Set the width */
-  margin-top: 75px ; /* Add margin to create space between header and form */
-  padding: 10px 20px;
-  /* background-image: url('https://media.istockphoto.com/id/967486898/vector/studio-black-mockup.jpg?s=612x612&w=0&k=20&c=YN9LpbeGu-Kb1uTchJE6EKUqaSDRsEH7vqSkcVwVTOg='); */
+  width: 80%; /* Set the width */
+  margin-top: 50px ; /* Add margin to create space between header and form */
+  padding: 0px 20px;
   background-color: #000000ce;
   border-radius: 10px;
   box-shadow:  0 0 5px #ffffff;
-
 }
 
 
@@ -145,7 +143,7 @@ h2 {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
 .form-label {
@@ -203,4 +201,29 @@ button:hover {
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
 
+
+@media (max-width: 768px) {
+  
+.register{
+
+  overflow:none; /* Allow scrollbars */
+}
+.registration-container {
+  max-width: 400px;
+  width: 80%; /* Set the width */
+  margin-top: -70px ; /* Add margin to create space between header and form */
+  padding: 0px 15px;
+  background-color: #000000ce;
+  border-radius: 10px;
+  box-shadow:  0 0 5px #ffffff;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+}
 </style>
+

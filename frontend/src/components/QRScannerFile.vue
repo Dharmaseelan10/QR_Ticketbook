@@ -169,4 +169,102 @@ export default {
 .white-text {
   color: rgb(255, 255, 255);
 }
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .qr-scanner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+  height: 100vh;
+}
+.upload-button {
+  margin-bottom: 20px;
+}
+.qr-info {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+}
+.qr-info h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+.qr-info .qr-data-container {
+  background-color: #ffe600;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  height: 400px;
+  max-width: 200px; /* Set the maximum width as needed */
+  width: 100%; /* Ensure the container takes full width within its parent */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.qr-info .qr-data-container .poster {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 0px;
+  border-radius: 5px;
+}
+
+.qr-info h5 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.details-container {
+  text-align: center;
+  margin-left: 2px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+.details-container p {
+  margin: 5px 0;
+}
+.additional-info {
+  text-align: center;
+  margin-top: 20px;
+}
+.additional-info h3 {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+.additional-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+}
+.white-text {
+  color: rgb(255, 255, 255);
+}
+
+.poster {
+  max-width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+}
 </style>

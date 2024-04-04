@@ -2,7 +2,7 @@
   <div class="concert-info">
     <img src="https://media.karousell.com/media/photos/products/2023/6/21/cold_play_malaysia_concert_202_1687310359_38d9eece_progressive.jpg" alt="Concert 2 Poster" class="concert-poster">
     <h2 class="concert-title">Music of the Spheres World Tour</h2>
-    <p class="concert-description">The Music of the Spheres World Tour represents a monumental moment in the career of global superstar Ed Sheeran. Named after his highly anticipated fourth studio album, "Music of the Spheres," this tour promises to be a spectacular journey through Sheeran's unparalleled musical universe. Spanning continents and captivating audiences across the globe, the tour showcases Sheeran's extraordinary talent as a performer and songwriter.
+    <p class="concert-text1">The Music of the Spheres World Tour represents a monumental moment in the career of global superstar Ed Sheeran. Named after his highly anticipated fourth studio album, "Music of the Spheres," this tour promises to be a spectacular journey through Sheeran's unparalleled musical universe. Spanning continents and captivating audiences across the globe, the tour showcases Sheeran's extraordinary talent as a performer and songwriter.
 
 The tour's title, "Music of the Spheres," hints at Sheeran's ambition to transcend earthly limitations and explore the celestial realms of creativity and expression. With his trademark blend of heartfelt lyrics, soulful melodies, and infectious rhythms, Sheeran invites audiences to join him on a cosmic adventure through the power of music.
 
@@ -53,20 +53,20 @@ export default {
 
 .concert-title {
   color: #ffffff; /* Set title text color to white */
+  text-align: center;
 }
 
-.concert-description {
-  color: #ffffff; /* Set description text color to white */
-  margin-bottom: 20px; /* Add margin bottom for spacing */
-  text-align: justify; /* Justify text */
-  text-align-last: center; /* Center align last line */
-  font-size: 16px; /* Adjust font size */
-  margin-left: 100px;
-  margin-right: 100px;
+.concert-text1 {
+  color: #ffffff; /* Set text color to white */
+  font-size: 16px;
+  justify-content: center;
+  text-align: center;
 }
-
 .concert-text {
   color: #ffffff; /* Set text color to white */
+  font-size: 16px;
+  justify-content: center;
+  
 }
 
 .book-ticket-button, .whatsapp-booking-button {
@@ -82,10 +82,48 @@ export default {
 }
 
 .book-ticket-button:hover, .whatsapp-booking-button:hover {
-  background: #03e9f4;
+    background: #03e9f4;
     color: #010101;
     box-shadow: 0 0 5px #03e9f4,
                 0 0 25px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+
+@media (max-width: 768px) {
+.concert-info {
+  margin: 50px;
+  margin-top: 70px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #ffffff; /* Set text color to white */
+}
+
+.concert-text {
+  color: #ffffff; /* Set text color to white */
+  font-size: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.concert-text1 {
+  color: #ffffff; /* Set text color to white */
+  font-size: 12px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.book-ticket-button, .whatsapp-booking-button {
+  padding: 10px 20px;
+  font-size: 12px;
+  margin-right: 10px; /* Add margin between buttons */
+  background-color:  #8c00ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+}
+
 </style>

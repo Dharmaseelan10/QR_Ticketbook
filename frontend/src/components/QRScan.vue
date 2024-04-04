@@ -67,7 +67,7 @@ export default {
 .button {
   display: inline-block;
   padding: 20px 40px;
-  background-color: #42b983;
+  background-color: #0518f2;
   color: white;
   text-decoration: none;
   margin: 10px;
@@ -87,5 +87,55 @@ export default {
     box-shadow: 0 0 5px #03e9f4,
                 0 0 25px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+@media (max-width: 768px) {
+
+
+  .welcome {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff; /* Set text color */
+  text-shadow: 0 0 5px #f403dc74, /* Add shadow effect */
+               0 0 25px #f403dc74;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -20px;
+  color: rgb(255, 255, 255);
+  font-family: 'Arial Black', sans-serif;
+  color: #ffffff; /* Set text color */
+  text-shadow:  0 0 5px #000000;
+}
+
+.info {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.button-container {
+  margin-top: 30px;
+  align-items: center;
+  
+}
+
+.button {
+  display: flex;
+  padding: 20px 40px;
+  background-color: #0518f2;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
 }
 </style>

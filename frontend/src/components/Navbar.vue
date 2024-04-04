@@ -30,12 +30,8 @@
       <!-- Other navigation links -->
       <router-link v-if="showloginLink" to="/ticketbooking" class="nav-button">Book Ticket</router-link>
       <router-link v-if="showloginLink" to="/user-qrcode" class="nav-button">Profile</router-link>
+      <router-link v-if="showloginLink" to="/" class="nav-button">Logout</router-link>
       
-      <!-- Replace Logout text with icon -->
-      <router-link v-if="showloginLink" to="/" class="nav-button" @mouseover="showLogoutIcon = true" @mouseleave="showLogoutIcon = false">
-        <span v-if="!showLogoutIcon">Logout</span>
-        <img v-if="showLogoutIcon" src="https://cdn-icons-png.freepik.com/512/1053/1053364.png" alt="Logout Icon" class="logout-icon">
-      </router-link>
 
       <router-link v-if="showSignInLink" to="/login" class="nav-button">SignIn</router-link>
       
@@ -93,7 +89,7 @@ export default {
   align-items: center;
   padding: 10px 20px;
   background-color: #00000095;
-  box-shadow:  0 0 5px #ffffff;        
+  box-shadow:  0 0 5px #ffffff;       
 }
 
 .logo {
@@ -107,7 +103,6 @@ export default {
   width: auto;
   margin-right: 10px;
   border-radius: 80%;
-  /* overflow: hidden; */
 }
 
 .app-name {
@@ -116,11 +111,11 @@ export default {
   font-weight: bold;
   text-shadow: 0 0 5px #000000;
 }
+
 .app-name:hover{
   color: rgb(255, 255, 255);
-    text-shadow: 0 0 5px #ffffff, /* Add shadow effect */
+  text-shadow: 0 0 5px #ffffff, /* Add shadow effect */
                0 0 25px #03e9f4;
-             
 }
 
 .nav-links {
@@ -158,7 +153,6 @@ export default {
 
 .nav-button:hover .logout-icon,
 .nav-button:hover .sign-in-icon {
-
   background: none; /* Remove the background color */
   color: #ffffff; /* Set text color */
   text-shadow: 0 0 5px #03e9f4, /* Add shadow effect */
@@ -201,5 +195,35 @@ export default {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .app-name {
+    font-size: 15px; /* Adjust font size for smaller screens */
+  }
+
+  .nav-button {
+    margin-left: 10px; /* Adjust spacing for smaller screens */
+    font-size: 10px; /* Adjust font size for smaller screens */
+  }
+
+  .logo img {
+    height: 30px; /* Adjust logo size for smaller screens */
+  }
+
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #00000095;
+  min-width: 160px;
+  z-index: 1;
+  font-size: 12px;
+}
+
 }
 </style>

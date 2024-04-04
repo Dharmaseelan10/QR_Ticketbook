@@ -23,13 +23,14 @@
         <router-link to="/login" class="button">Login</router-link>
         <router-link to="/register" class="button">Register</router-link>
       </div>
+    </div>
       <h2 class="sub-header">Explore and Book Your Favorite Concerts</h2>
       <p class="description">
         Discover upcoming concerts, book tickets conveniently, 
         and enjoy seamless entry using our QR Ticket Booking System. 
         Whether you're a music enthusiast or just looking for a fun night out, we have something for everyone!
       </p>
-    </div>
+    
   </div>
 </template>
 
@@ -63,10 +64,7 @@ export default {
 </script>
 
 <style scoped>
-
-
-
-/* Add styles for the dashboard page */
+/* Your existing styles for the dashboard page */
 .homepage {
   display: flex;
   flex-direction: column;
@@ -89,24 +87,26 @@ export default {
 
 .welcome-container {
   max-width: 1200px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .header {
   font-size: 36px;
   font-weight: bold;
-  margin-bottom: 50px;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: -20px;
   color: #ffffff;
   background: none; /* Remove the background color */
   color: #ffffff; /* Set text color */
   text-shadow: 0 0 5px #000000;
-
 }
 
 .sub-header {
   font-size: 28px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 0;
   color: #ffffff;
   background: none; /* Remove the background color */
   color: #ffffff; /* Set text color */
@@ -115,13 +115,17 @@ export default {
 
 .description {
   font-size: 20px;
-  margin-bottom: 30px;
   color: #ffffff;
   background: none; /* Remove the background color */
   text-shadow: 0 0 5px #000000;
+  max-width: 1000px; /* Set a max-width to prevent text from becoming too wide */
+  margin: 0 auto; /* Center the description text */
+  padding: 0 20px; /* Add padding for better readability */
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  word-wrap: break-word; /* Break words to prevent overflow */
+  overflow-wrap: break-word; /* Ensure proper word wrapping */
+  text-align: center; /* Align text to the left */
 }
-
-
 
 .posters-container {
   overflow: hidden; /* Hide overflowing posters */
@@ -148,7 +152,7 @@ export default {
 }
 
 .poster img {
-  width:200px;
+  width: 200px;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
@@ -187,7 +191,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-.button{
+.button {
   padding: 10px 20px;
   background-color: #8c00ff;
   color: #ffffff;
@@ -197,21 +201,75 @@ export default {
   letter-spacing: 4px;
   overflow: hidden;
   transition: 0.5s;
-  margin: 10px;
+  margin-top: 10px;
   cursor: pointer;
   text-decoration: none;
+  margin-right: 10px; /* Add margin-right for spacing between buttons */
 }
-.auth-buttons{
-  margin-top: 50px;
+
+.auth-buttons {
+  margin-top: 0px;
+  margin-bottom: 5px;
   padding: 20px;
 }
 
-.button:hover{
-    background: #03e9f4;
-    color: #010101;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4;
-     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+.button:hover {
+  background: #03e9f4;
+  color: #010101;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  
+  body {
+    overflow: hidden; /* Hide scrollbar */
+  }
+
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333333;
+    padding: 0px;
+    margin-top: 50px;
+    margin-left: 0px;
+    overflow: hidden; /* Hide scrollbar */
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .header {
+    font-size: 22px; /* Adjust font size for smaller screens */
+    margin-bottom: 30px;
+    margin-top: -10px;
+  }
+
+  .sub-header {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    margin-top: 0px;
+    max-width: 900px;
+  }
+
+  .description {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    max-width: 400px; /* Set a max-width to prevent text from becoming too wide */
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .welcome-container {
+    max-width: 380px;
+  }
+
+  .poster img {
+    transition: transform 10.5s ease;
+  }
+}
 </style>

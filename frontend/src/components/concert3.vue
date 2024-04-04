@@ -2,7 +2,7 @@
   <div class="concert-info">
     <img src="https://images.lifestyleasia.com/wp-content/uploads/sites/5/2024/01/10170711/Snapinsta.app_401095539_17939237780745883_6301259909790717595_n_1080.jpg" alt="Concert 3 Poster" class="concert-poster">
     <h2 class="concert-title">Tom Jones Ages & Stages Tour</h2>
-    <p class="concert-description">The Tom Jones Ages & Stages Tour marks a milestone in the legendary career of one of music's most iconic performers. Named after his acclaimed album "Ages & Stages," this tour showcases Tom Jones's enduring talent, charisma, and timeless appeal as he takes audiences on a journey through the various stages of his remarkable career.
+    <p class="concert-text1">The Tom Jones Ages & Stages Tour marks a milestone in the legendary career of one of music's most iconic performers. Named after his acclaimed album "Ages & Stages," this tour showcases Tom Jones's enduring talent, charisma, and timeless appeal as he takes audiences on a journey through the various stages of his remarkable career.
 
 With a career spanning over six decades, Tom Jones has established himself as a true music icon, known for his powerful voice, dynamic stage presence, and electrifying live performances. From his early hits like "It's Not Unusual" and "What's New Pussycat?" to later classics such as "Delilah" and "Sex Bomb," Jones has captivated audiences around the world with his soulful interpretations and undeniable charm.
 
@@ -53,20 +53,20 @@ export default {
 
 .concert-title {
   color: #ffffff; /* Set title text color to white */
+  text-align: center;
 }
 
-.concert-description {
-  color: #ffffff; /* Set description text color to white */
-  margin-bottom: 20px; /* Add margin bottom for spacing */
-  text-align: justify; /* Justify text */
-  text-align-last: center; /* Center align last line */
-  font-size: 16px; /* Adjust font size */
-  margin-left: 100px;
-  margin-right: 100px;
+.concert-text1 {
+  color: #ffffff; /* Set text color to white */
+  font-size: 16px;
+  justify-content: center;
+  text-align: center;
 }
-
 .concert-text {
   color: #ffffff; /* Set text color to white */
+  font-size: 16px;
+  justify-content: center;
+  
 }
 
 .book-ticket-button, .whatsapp-booking-button {
@@ -82,10 +82,48 @@ export default {
 }
 
 .book-ticket-button:hover, .whatsapp-booking-button:hover {
-  background: #03e9f4;
+    background: #03e9f4;
     color: #010101;
     box-shadow: 0 0 5px #03e9f4,
                 0 0 25px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+
+@media (max-width: 768px) {
+.concert-info {
+  margin: 50px;
+  margin-top: 70px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #ffffff; /* Set text color to white */
+}
+
+.concert-text {
+  color: #ffffff; /* Set text color to white */
+  font-size: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.concert-text1 {
+  color: #ffffff; /* Set text color to white */
+  font-size: 12px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.book-ticket-button, .whatsapp-booking-button {
+  padding: 10px 20px;
+  font-size: 12px;
+  margin-right: 10px; /* Add margin between buttons */
+  background-color:  #8c00ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+}
+
 </style>

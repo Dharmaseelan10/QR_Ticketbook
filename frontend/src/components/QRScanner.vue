@@ -48,10 +48,10 @@ export default {
     };
   },
   mounted() {
+    // Automatically initialize the camera when component is mounted
     this.initCamera();
   },
   methods: {
-    // Method to initialize camera feed
     async initCamera() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
@@ -71,7 +71,8 @@ export default {
     }
   } catch (error) {
     console.error('Failed to initialize camera:', error);
-    // Handle the error here, e.g., show a message to the user
+    // Provide a more informative message to the user
+    alert('Failed to access the camera. Please make sure you have granted permission to access the camera and are using a secure connection (HTTPS).');
   }
 },
 
@@ -120,6 +121,7 @@ export default {
   width: 300px; /* Adjust the size of the camera view */
   height: 300px; /* Adjust the size of the camera view */
   overflow: hidden;
+  margin-top: 100px;
 }
 .camera {
   width: 100%;
@@ -216,5 +218,98 @@ export default {
                 0 0 25px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .qr-scanner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+  height: 100vh;
+}
+.qr-info {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+}
+.qr-info h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+.qr-info .qr-data-container {
+  background-color: #ffe600;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  height: 400px;
+  max-width: 200px; /* Set the maximum width as needed */
+  width: 100%; /* Ensure the container takes full width within its parent */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
 
+.qr-info .qr-data-container .poster {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 0px;
+  border-radius: 5px;
+}
+
+.qr-info h5 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.details-container {
+  text-align: center;
+  margin-left: 2px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+.details-container p {
+  margin: 5px 0;
+}
+.additional-info {
+  text-align: center;
+  margin-top: 20px;
+}
+.additional-info h3 {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+.additional-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+}
+.white-text {
+  color: rgb(255, 255, 255);
+}
+
+.poster {
+  max-width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+}
 </style>

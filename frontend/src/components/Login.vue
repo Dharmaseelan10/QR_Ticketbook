@@ -88,6 +88,7 @@ export default {
 
 .login {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -96,15 +97,16 @@ export default {
   background-image: url('https://www.wallpapertip.com/wmimgs/43-432643_concert-backgrounds.jpg'); 
   background-size: cover;
   background-position: center;
+  width: 100vw; /* Set width to full viewport width */
+  height: 100vh; /* Set height to full viewport height */
 }
 
 .login-container {
   width: 320px; /* Set the width */
   height: 350px; /* Set the height */
-  max-width: 450px;
+  max-width: 80%;
   margin: 200px auto; /* Adjust margin for centering on the page and creating space from the navbar */
   padding: 25px;
-  /* background-image: url('https://media.istockphoto.com/id/967486898/vector/studio-black-mockup.jpg?s=612x612&w=0&k=20&c=YN9LpbeGu-Kb1uTchJE6EKUqaSDRsEH7vqSkcVwVTOg='); */
   background-color: #000000ce;
   border-radius: 10px;
   box-shadow:  0 0 5px #ffffff;
@@ -176,5 +178,21 @@ button:hover {
   color: red;
   margin-top: 10px;
   text-align: center;
+
+}
+
+@media (max-width: 768px) {
+
+ 
+.login-container {
+  width: 320px; /* Set the width */
+  height: 350px; /* Set the height */
+  max-width: 80%;
+  padding: 25px;
+  background-color: #000000ce;
+  border-radius: 10px;
+  box-shadow:  0 0 5px #ffffff;
+  margin-top: 100px;
+}
 }
 </style>
