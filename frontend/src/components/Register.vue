@@ -143,7 +143,7 @@ h2 {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
 }
 
 .form-label {

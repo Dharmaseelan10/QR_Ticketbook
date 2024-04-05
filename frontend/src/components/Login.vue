@@ -103,7 +103,7 @@ export default {
 
 .login-container {
   width: 320px; /* Set the width */
-  height: 350px; /* Set the height */
+  height: 370px; /* Set the height */
   max-width: 80%;
   margin: 200px auto; /* Adjust margin for centering on the page and creating space from the navbar */
   padding: 25px;

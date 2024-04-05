@@ -186,14 +186,21 @@ router.post('/book-ticket', isAuthenticated, (req, res) => {
             }
           });
 
-          const baseUrl = `dist/qr_code/`;
-          const qrFilePath2 = `${baseUrl}${qrFileName}`;
-          QRCode.toFile(qrFilePath2, qrData, (err) => {
-            if (err) {
+          const fs = require('fs');
+
+        // Ensure the qr_code directory exists under dist
+              const qrCodeDirectory = path.join(__dirname, 'dist', 'qr_code');
+              if (!fs.existsSync(qrCodeDirectory)) {
+               fs.mkdirSync(qrCodeDirectory, { recursive: true });
+                }
+
+              const baseUrl = `dist/qr_code/`;
+                        const qrFilePath2 = `${baseUrl}${qrFileName}`;
+                  QRCode.toFile(qrFilePath2, qrData, (err) => {
+                    if (err) {
               console.error('Error generating QR code:', err);
-              return res.status(500).json({ error: 'Failed to generate QR code' });
-            }
-          
+                  return res.status(500).json({ error: 'Failed to generate QR code' });
+              }
           const qrCodePath = `http://localhost:3000/qr_code/${qrFileName}`;
           const updateBookingQuery = 'UPDATE bookings SET qrCodeUrl = ? WHERE id = ?';
           pool.query(updateBookingQuery, [qrCodePath, bookingId], (err) => {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2024 at 04:11 AM
+-- Generation Time: Apr 05, 2024 at 10:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,16 +38,6 @@ CREATE TABLE `bookings` (
   `userId` int(11) DEFAULT NULL,
   `concertName` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`id`, `concertId`, `name`, `phoneNumber`, `selectedSeat`, `bookingTime`, `qrCodeUrl`, `userId`, `concertName`) VALUES
-(148, 1, 'Lee', '01046875211', 1, '2024-03-27 02:39:40', 'http://localhost/php-vue/qr_code/qr_code_Ed Sheeran Tour (30th March 2024)_148.png', 5, NULL),
-(149, 2, 'Lee', '03543544412', 1, '2024-03-27 02:41:02', 'http://localhost/php-vue/qr_code/qr_code_Music of the Spheres World Tour (31st March 2024)_149.png', 5, NULL),
-(151, 1, 'Dharmaseelan', '57454442', 2, '2024-03-27 02:47:39', 'http://localhost/php-vue/qr_code/qr_code_Ed Sheeran Tour (30th March 2024)_151.png', 3, NULL),
-(152, 1, 'Dharmaseelan', '57454442', 3, '2024-03-27 02:48:01', 'http://localhost/php-vue/qr_code/qr_code_Ed Sheeran Tour (30th March 2024)_152.png', 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,7 +119,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
 
 --
 -- AUTO_INCREMENT for table `concerts`
