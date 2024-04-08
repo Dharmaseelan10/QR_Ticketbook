@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vue/server-renderer": "^3.4.21",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -20,6 +21,7 @@
     "mysql2": "^3.9.2",
     "node-fetch": "^3.3.2",
     "qrcode": "^1.5.3",
-    "sequelize": "^6.37.1"
+    "sequelize": "^6.37.1",
+    "vue-server-renderer": "^2.7.16"
   }
 }
