@@ -9,9 +9,9 @@ const path = require('path');
 
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: 'localhost',
+  host: '192.168.1.4',
   user: 'root',
-  password: '',
+  password: '12345',
   database: 'concertdb'
 });
 

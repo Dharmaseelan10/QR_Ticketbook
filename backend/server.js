@@ -7,9 +7,9 @@ const { Sequelize } = require('sequelize');
 // Database connection configuration
 const sequelize = new Sequelize({
   dialect: 'mysql',
-  host: 'localhost',
+  host: '192.168.1.4',
   username: 'root',
-  password: '',
+  password: '12345',
   database: 'concertdb',
 });
 
