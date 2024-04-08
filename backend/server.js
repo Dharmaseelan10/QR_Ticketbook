@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const { createBundleRenderer } = require('vue-server-renderer');
 const qrticketRoutes = require('./QRTicket');
 const { Sequelize } = require('sequelize');
 
@@ -24,9 +25,25 @@ app.use('/api', qrticketRoutes);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Route for serving the index.html file for all requests
+// Create a renderer for the server bundle
+const renderer = createBundleRenderer(path.resolve(__dirname, 'dist', 'vue-ssr-server-bundle.json'), {
+  runInNewContext: false, // Recommended
+  template: fs.readFileSync(path.resolve(__dirname, 'dist', 'index.html'), 'utf-8'), // Load HTML template
+});
+
+// Route for serving the Vue.js application
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  const context = { url: req.url };
+
+  // Render Vue app to string
+  renderer.renderToString(context, (err, html) => {
+    if (err) {
+      console.error(err);
+      res.status(500).end('Internal Server Error');
+      return;
+    }
+    res.end(html);
+  });
 });
 
 // Sync database models and start the server
