@@ -53,7 +53,7 @@ export default {
     // Conditionally show the Concerts link based on the current route
     showloginLink() {
       // Define an array of paths where you want to show the Sign In link
-      const allowedPaths = ['/ticket', '/ticketbooking', '/user-qrcode', '/QRScan', '/QRScanner', '/QRScannerMachine', '/QRScannerFile', '/concert1','/concert2', '/concert3', '/Chatbot' ];
+      const allowedPaths = ['/','/ticket', '/ticketbooking', '/user-qrcode', '/QRScan', '/QRScanner', '/QRScannerMachine', '/QRScannerFile', '/concert1','/concert2', '/concert3', '/Chatbot' ];
       // Return true if the current route is included in the allowed paths
       return allowedPaths.includes(this.$route.path);
     },
