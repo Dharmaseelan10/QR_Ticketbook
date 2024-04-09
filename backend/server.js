@@ -29,6 +29,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+
 // Sync database models and start the server
 sequelize.sync().then(() => {
   app.listen(PORT, () => {

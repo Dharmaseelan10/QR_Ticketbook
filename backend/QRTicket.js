@@ -168,54 +168,54 @@ router.post('/book-ticket', isAuthenticated, (req, res) => {
           message: '<<<<Booking exists>>>>'
         });
 
-         // Generate a unique filename for the QR code
-         const qrFileName = `qr_code_${concertDetails.concertName}_${bookingId}.png`;
-         console.log(qrFileName);
-        
-          const os = require('os');
-
-        // Get the path to the user's downloads directory
-          const userDownloadsDirectory = path.join(os.homedir(), 'Downloads');
-          const qrFilePath1 = path.join(userDownloadsDirectory, qrFileName);
-
-          QRCode.toFile(qrFilePath1, qrData, (err) => {
-           if (err) {
-            console.error('Error saving QR code to the first path:', err);
-              } else {
-            console.log('QR code saved to user\'s downloads directory');
-            }
-          });
-
-          const fs = require('fs');
-
-        // Ensure the qr_code directory exists under dist
-              const qrCodeDirectory = path.join(__dirname, 'dist', 'qr_code');
-              if (!fs.existsSync(qrCodeDirectory)) {
-               fs.mkdirSync(qrCodeDirectory, { recursive: true });
-                }
-
-              const baseUrl = `dist/qr_code/`;
-                        const qrFilePath2 = `${baseUrl}${qrFileName}`;
-                  QRCode.toFile(qrFilePath2, qrData, (err) => {
-                    if (err) {
-              console.error('Error generating QR code:', err);
-                  return res.status(500).json({ error: 'Failed to generate QR code' });
+           // Generate a unique filename for the QR code
+           const qrFileName = `qr_code_${concertDetails.concertName}_${bookingId}.png`;
+           console.log(qrFileName);
+          
+            const os = require('os');
+  
+          // Get the path to the user's downloads directory
+            const userDownloadsDirectory = path.join(os.homedir(), 'Downloads');
+            const qrFilePath1 = path.join(userDownloadsDirectory, qrFileName);
+  
+            QRCode.toFile(qrFilePath1, qrData, (err) => {
+             if (err) {
+              console.error('Error saving QR code to the first path:', err);
+                } else {
+              console.log('QR code saved to user\'s downloads directory');
               }
-          const qrCodePath = `http://localhost:3000/qr_code/${qrFileName}`;
-          const updateBookingQuery = 'UPDATE bookings SET qrCodeUrl = ? WHERE id = ?';
-          pool.query(updateBookingQuery, [qrCodePath, bookingId], (err) => {
-            if (err) {
-              console.error('Error updating booking with QR code URL:', err);
-              return res.status(500).json({ error: 'Failed to update booking' });
-            }
-            res.status(201).json({ message: 'Ticket booked successfully', qrData: qrCodePath });
+            });
+  
+            const fs = require('fs');
+  
+          // Ensure the qr_code directory exists under dist
+                const qrCodeDirectory = path.join(__dirname, 'dist', 'qr_code');
+                if (!fs.existsSync(qrCodeDirectory)) {
+                 fs.mkdirSync(qrCodeDirectory, { recursive: true });
+                  }
+  
+                const baseUrl = `dist/qr_code/`;
+                          const qrFilePath2 = `${baseUrl}${qrFileName}`;
+                    QRCode.toFile(qrFilePath2, qrData, (err) => {
+                      if (err) {
+                console.error('Error generating QR code:', err);
+                    return res.status(500).json({ error: 'Failed to generate QR code' });
+                }
+            const qrCodePath = `http://localhost:3000/qr_code/${qrFileName}`;
+            const updateBookingQuery = 'UPDATE bookings SET qrCodeUrl = ? WHERE id = ?';
+            pool.query(updateBookingQuery, [qrCodePath, bookingId], (err) => {
+              if (err) {
+                console.error('Error updating booking with QR code URL:', err);
+                return res.status(500).json({ error: 'Failed to update booking' });
+              }
+              res.status(201).json({ message: 'Ticket booked successfully', qrData: qrCodePath });
+            });
           });
         });
       });
     });
   });
-});
-
+  
 router.get('/bookings/:concertId/seats', isAuthenticated, (req, res) => {
   const concertId = req.params.concertId;
 
